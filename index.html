@@ -150,8 +150,8 @@ nav{position:fixed;top:3px;left:0;right:0;z-index:500;background:rgba(17,16,9,.9
 @keyframes spin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
 .hero-ov{position:absolute;inset:0;background:linear-gradient(to right,rgba(17,16,9,.92) 40%,rgba(17,16,9,.55) 65%,rgba(17,16,9,.15) 100%);z-index:1;}
 .hero-content{position:relative;z-index:2;padding:140px 60px 100px;max-width:620px;}
-.hero-ey{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:26px;display:flex;align-items:center;gap:13px;opacity:0;animation:fadeUp .8s .1s forwards;}
-.hero-ey::before{content:'';width:34px;height:1px;background:var(--gold);}
+
+
 h1.hero-h{font-family:'Cormorant Garamond',serif;font-size:clamp(50px,6vw,86px);font-weight:300;line-height:1.03;color:var(--cream);margin-bottom:12px;opacity:0;animation:fadeUp .8s .25s forwards;}
 h1.hero-h em{font-style:italic;color:var(--gold);}
 .hero-sl{font-family:'Cormorant Garamond',serif;font-size:clamp(16px,1.8vw,23px);font-style:italic;color:rgba(250,248,243,.48);margin-bottom:16px;opacity:0;animation:fadeUp .8s .38s forwards;}
@@ -373,7 +373,7 @@ tbody td.hl{background:rgba(201,169,97,.05);text-align:center;}
 .testi-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px;}
 .testi-car-outer{overflow:hidden;}
 .testi-track{display:flex;gap:22px;transition:transform .55s cubic-bezier(.25,.46,.45,.94);}
-.tcard{min-width:calc(50% - 11px);flex-shrink:0;background:var(--white);border:1px solid rgba(201,169,97,.09);padding:40px;transition:var(--trans);}
+.tcard{background:#fff;border:1px solid rgba(201,169,97,.1);border-radius:8px;padding:24px 28px;flex:0 0 calc(50% - 11px);min-width:280px;transition:box-shadow .3s;}
 .tcard:hover{border-color:rgba(201,169,97,.32);box-shadow:var(--shadow-h);transform:translateY(-4px);}
 .tq{font-family:'Cormorant Garamond',serif;font-size:66px;color:var(--gold);opacity:.18;line-height:.7;margin-bottom:11px;display:block;}
 .trating{color:var(--gold);font-size:13px;margin-bottom:12px;letter-spacing:2px;}
@@ -519,34 +519,44 @@ footer{background:var(--dark2);border-top:1px solid rgba(201,169,97,.1);padding:
 .about-photo{background:var(--dark2);height:580px;overflow:hidden;position:relative;}
 .about-photo-img{width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block;filter:brightness(.92) contrast(1.05);}
 
-/* ── ADMIN EDIT MODE ── */
-.admin-bar{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--dark2);border-top:2px solid var(--gold);padding:10px 24px;z-index:9000;align-items:center;justify-content:space-between;gap:16px;}
-.admin-bar.on{display:flex;}
-.admin-bar-left{display:flex;align-items:center;gap:12px;}
-.admin-bar-dot{width:10px;height:10px;border-radius:50%;background:#4CAF50;animation:pulse-green 1.5s infinite;}
-@keyframes pulse-green{0%,100%{opacity:1;}50%{opacity:.4;}}
-.admin-bar-label{font-size:12px;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;font-weight:500;}
-.admin-bar-hint{font-size:11px;color:var(--muted);}
-.admin-btns{display:flex;gap:10px;}
-.admin-save{background:var(--gold);color:var(--dark);border:none;padding:8px 24px;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border-radius:50px;transition:all .2s;}
+
+
+
+
+
+50%{opacity:.4;}}
+
+
+
+
 .admin-save:hover{background:var(--gold-d);}
-.admin-cancel{background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,.1);padding:8px 18px;font-size:12px;cursor:pointer;border-radius:50px;transition:all .2s;}
+
 .admin-cancel:hover{color:var(--cream);}
-.edit-mode [contenteditable="true"]{outline:2px dashed rgba(201,169,97,.5);outline-offset:3px;border-radius:2px;cursor:text;transition:outline .2s;}
-.edit-mode [contenteditable="true"]:focus{outline:2px solid var(--gold);background:rgba(201,169,97,.05);}
-.edit-mode [contenteditable="true"]:hover:not(:focus){outline-color:rgba(201,169,97,.7);}
-.admin-login{display:none;position:fixed;inset:0;background:rgba(17,16,9,.95);z-index:9999;align-items:center;justify-content:center;}
-.admin-login.open{display:flex;}
-.admin-login-box{background:var(--dark2);border:1px solid rgba(201,169,97,.2);padding:40px 44px;width:360px;text-align:center;}
-.admin-login-title{font-family:"Cormorant Garamond",serif;font-size:26px;color:var(--cream);margin-bottom:6px;}
-.admin-login-sub{font-size:12px;color:var(--muted);margin-bottom:28px;}
-.admin-login input{width:100%;background:var(--dark3);border:1px solid rgba(201,169,97,.2);color:var(--cream);padding:12px 16px;font-family:"Outfit",sans-serif;font-size:14px;outline:none;margin-bottom:14px;text-align:center;letter-spacing:.15em;}
-.admin-login input:focus{border-color:var(--gold);}
-.admin-login-btn{width:100%;background:var(--gold);color:var(--dark);border:none;padding:13px;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:background .2s;}
-.admin-login-btn:hover{background:var(--gold-d);}
-.admin-login-err{font-size:12px;color:#e57373;margin-top:10px;display:none;}
-.admin-trigger{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);z-index:8000;background:rgba(17,16,9,.8);border:1px solid rgba(201,169,97,.15);color:rgba(201,169,97,.4);font-size:11px;letter-spacing:.15em;text-transform:uppercase;padding:6px 16px;cursor:pointer;border-radius:50px;transition:all .3s;}
-.admin-trigger:hover{color:var(--gold);border-color:rgba(201,169,97,.4);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.svc-card:hover .svc-img img{transform:scale(1.05);}
+.svc-card:hover .art-img img{transform:scale(1.05);}
+.art-card:hover .art-img img{transform:scale(1.06);}
+
+.svc-card:hover .svc-img-svg svg{opacity:1;transform:scale(1.08);}
+.svc-img-svg svg{transition:opacity .3s,transform .4s;}
+.art-img-svg svg{transition:opacity .3s,transform .4s;}
+.art-card:hover .art-img-svg svg{opacity:.9;transform:scale(1.08);}
+.svc-card:hover .svc-img-svg{background:#221f18 !important;}
 </style>
 </head>
 <body>
@@ -558,7 +568,7 @@ footer{background:var(--dark2);border-top:1px solid rgba(201,169,97,.1);padding:
 <div class="mob-menu" id="mobMenu">
   <button class="mob-close" onclick="closeMob()"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18M6 6l12 12"/></svg></span></button>
   <a href="#inicio" onclick="closeMob()">Início</a>
-  <a href="#areas" onclick="closeMob()">Áreas de Atuação</a>
+  <a href="#areas" onclick="closeMob()">Areas de atuação</a>
   <a href="#servicos" onclick="closeMob()">Serviços</a>
   <a href="#sobre" onclick="closeMob()">Sobre</a>
   <a href="#blog" onclick="closeMob()">Artigos</a>
@@ -584,15 +594,7 @@ footer{background:var(--dark2);border-top:1px solid rgba(201,169,97,.1);padding:
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a class="nav-logo" href="#" style="display:flex;align-items:center;gap:10px"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
-  <line x1="14" y1="2" x2="14" y2="26" stroke="#C9A961" stroke-width="1.5"/>
-  <circle cx="14" cy="2" r="2" fill="#C9A961"/>
-  <line x1="6" y1="8" x2="14" y2="8" stroke="#C9A961" stroke-width="1.5"/>
-  <line x1="14" y1="8" x2="22" y2="8" stroke="#C9A961" stroke-width="1.5"/>
-  <path d="M6 8 L3 14 L9 14 Z" fill="none" stroke="#C9A961" stroke-width="1.2"/>
-  <path d="M22 8 L19 14 L25 14 Z" fill="none" stroke="#C9A961" stroke-width="1.2"/>
-  <line x1="10" y1="26" x2="18" y2="26" stroke="#C9A961" stroke-width="1.5"/>
-</svg><span style="display:flex;align-items:center">Alcides<span style="opacity:.45;font-weight:300">.</span>Pirrotti</span></a>
+    <a class="nav-logo" href="#">PIRROTTI</a>
     <ul class="nav-links">
       <li>
         <a href="#areas">Soluções <span class="darr"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg></span></span></a>
@@ -619,7 +621,7 @@ footer{background:var(--dark2);border-top:1px solid rgba(201,169,97,.1);padding:
         </div>
       </li>
       <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#processo">Como Funciona</a></li>
+      <li><a href="#processo">COMO FUNCIONA</a></li>
       <li><a href="#blog">Artigos</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contato">Contato</a></li>
@@ -641,10 +643,10 @@ footer{background:var(--dark2);border-top:1px solid rgba(201,169,97,.1);padding:
 </div>
   <div class="hero-ov"></div>
   <div class="hero-content">
-    <div class="hero-ey">OAB/PR 131.531 · Especialista em Inventário e Herança</div>
+    
     <h1 class="hero-h">Seu patrimônio,<br><em>protegido e</em><br>transmitido.</h1>
-    <p class="hero-sl">Defesa jurídica estratégica</p>
-    <p class="hero-desc">Atendimento humanizado com análise técnica. Do inventário extrajudicial ao planejamento sucessório — clareza, agilidade e o menor custo possível para sua família.</p>
+    <p class="hero-sl">Defesa jurídica estratégica na proteção do patrimônio familiar</p>
+    <p class="hero-desc">Atendimento humanizado com análise técnica.<br>Do inventário extrajudicial ao planejamento sucessório.<br>Clareza, agilidade e o menor custo possível para sua família.</p>
     <div class="hero-btns">
       <a href="https://wa.me/5544920025968" class="btn-gold"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></span> Falar com o Dr. Alcides</a>
       <a href="#areas" class="btn-out">Ver áreas de atuação <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg></span></a>
@@ -665,7 +667,7 @@ footer{background:var(--dark2);border-top:1px solid rgba(201,169,97,.1);padding:
 
 <!-- CTA STRIP 1 -->
 <div class="cta-strip reveal">
-  <div class="cta-strip-t">Não sabe por onde começar?<br><em>Consulta inicial gratuita.</em></div>
+  <div class="cta-strip-t"><em>Consulta inicial gratuita.</em><br>Não sabe por onde começar? Clique abaixo!</div>
   <div class="cta-strip-btns">
     <a href="https://wa.me/5544920025968" class="btn-dark"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></span> WhatsApp agora</a>
     <button class="btn-clear" onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span> Agendar consulta</button>
@@ -674,21 +676,21 @@ footer{background:var(--dark2);border-top:1px solid rgba(201,169,97,.1);padding:
 
 <!-- DIFERENCIAIS -->
 <section class="diff-section">
-  <div class="sec-tag reveal">Por que escolher</div>
-  <h2 class="sec-title reveal">Três pilares que<br><em>nos diferenciam</em></h2>
-  <p class="sec-desc reveal">Mais do que resolver o inventário — conduzimos cada caso com estratégia, técnica e total transparência.</p>
+  <div class="sec-tag reveal">POR QUE ESCOLHER</div>
+  <h2 class="sec-title reveal">Três pilares que <em>nos diferenciam</em></h2>
+  <p class="sec-desc reveal">Mais do que resolver o inventário, conduzimos cada caso com estratégia,<br>técnica e total transparência.</p>
   <div class="diff-grid">
     <div class="diff-card reveal">
       <div class="diff-icon-wrap"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="15" height="10" rx="2"/><path d="m17 9 5-2v10l-5-2V9z"/></svg></span></div>
       <div class="diff-num">01</div>
       <h3 class="diff-name">Atendimento Online Estratégico</h3>
-      <p class="diff-desc">A sala de reunião é onde você está. Atendimentos de alta complexidade via videoconferência com o mesmo rigor técnico do presencial — sem deslocamento, com total sigilo.</p>
+      <p class="diff-desc">A sala de reunião é onde você está!<br>Atendimentos de alta complexidade via videoconferência com o mesmo rigor técnico do presencial.<br>Sem deslocamento, com total sigilo.</p>
     </div>
     <div class="diff-card reveal">
       <div class="diff-icon-wrap"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m14.5 12.5-8 8a2.12 2.12 0 0 1-3-3l8-8"/><path d="m16 8 1.5-1.5"/><path d="m9.5 14.5 1.5 1.5"/><path d="M14.5 5.5 20 11l-3 3-5.5-5.5z"/><path d="m8 8 3-3 5.5 5.5-3 3z"/></svg></span></div>
       <div class="diff-num">02</div>
       <h3 class="diff-name">Domínio Técnico Processual</h3>
-      <p class="diff-desc">Atuação especializada em ambas as vias — extrajudicial e judicial. Conheço os caminhos para resolver com rapidez no cartório e defender com firmeza no fórum.</p>
+      <p class="diff-desc">Atuação especializada em ambas as vias (extrajudicial e judicial). Conheço os caminhos para resolver com rapidez no cartório e defender com firmeza no fórum.</p>
     </div>
     <div class="diff-card reveal">
       <div class="diff-icon-wrap"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></span></div>
@@ -703,8 +705,8 @@ footer{background:var(--dark2);border-top:1px solid rgba(201,169,97,.1);padding:
 <div id="areas" class="areas-section">
   <div class="areas-header">
     <div>
-      <div class="sec-tag reveal" style="color:var(--gold)">Áreas de Atuação</div>
-      <h2 class="sec-title reveal" style="color:var(--cream)">Soluções que conheço<br><em>a fundo</em></h2>
+      <div class="sec-tag reveal" style="color:var(--gold)">Areas de atuação</div>
+      <h2 class="sec-title reveal" style="color:var(--cream)">Soluções que conheço <em>a fundo</em></h2>
       <p class="sec-desc reveal" style="color:rgba(250,248,243,.48);margin-bottom:0">Cada área com sua estratégia, caminhos e vantagens — explicados com clareza.</p>
     </div>
     <div class="areas-cnav reveal">
@@ -724,8 +726,8 @@ footer{background:var(--dark2);border-top:1px solid rgba(201,169,97,.1);padding:
 
 <!-- SERVICES -->
 <section id="servicos" class="svc-section">
-  <div class="sec-tag reveal">Serviços Complementares</div>
-  <h2 class="sec-title reveal">Expertise técnica<br><em>em cada detalhe</em></h2>
+  <div class="sec-tag reveal">SERVIÇOS COMPLEMENTARES</div>
+  <h2 class="sec-title reveal">Expertise técnica <em>em cada detalhe</em></h2>
   <p class="sec-desc reveal">Além das grandes áreas, domino os procedimentos que fazem diferença no resultado final.</p>
   <div class="svc-search-r reveal"><input type="text" placeholder="Buscar serviço..." oninput="filterSvc(this.value)"><button><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span></button></div>
   <div class="svc-filters reveal">
@@ -735,12 +737,36 @@ footer{background:var(--dark2);border-top:1px solid rgba(201,169,97,.1);padding:
     <button class="svc-f" onclick="svcTab(this,'registro')"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg></span> Registro</button>
   </div>
   <div class="svc-grid" id="svcGrid">
-    <div class="svc-card reveal" data-cat="patrimonial" data-tags="holding familiar patrimônio blindagem empresa proteção"><div class="svc-img"><span class="ico main-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="2" width="16" height="20"/><path d="M9 22V12h6v10"/><path d="M8 7h.01M16 7h.01M8 11h.01M16 11h.01"/></svg></span><span class="svc-badge-tag">Patrimonial</span><span class="ico svc-star-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><div class="svc-plus-btn"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span></div></div><div class="svc-body"><div class="svc-num-circle">A</div><h3 class="svc-name">Holding Familiar</h3><p class="svc-desc">Estruture o patrimônio, proteja bens de riscos pessoais, facilite a sucessão e reduza a carga tributária.</p><div class="svc-cta">Ver detalhes <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg></span></div></div></div>
-    <div class="svc-card reveal" data-cat="tributario" data-tags="ITCMD imposto tributária revisão avaliação imóvel reduzir"><div class="svc-img"><span class="ico main-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="9" cy="7" rx="7" ry="4"/><path d="M2 7v6c0 2.21 3.13 4 7 4s7-1.79 7-4V7"/><path d="M16 3.13A4 4 0 0 1 20 7v6c0 2.21-1.79 4-4 4"/></svg></span><span class="svc-badge-tag">Tributário</span><span class="ico svc-star-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><div class="svc-plus-btn"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span></div></div><div class="svc-body"><div class="svc-num-circle">B</div><h3 class="svc-name">Inteligência Tributária · ITCMD</h3><p class="svc-desc">Revisão crítica do cálculo do imposto de transmissão. Teses jurídicas para o menor ITCMD legalmente possível.</p><div class="svc-cta">Ver detalhes <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg></span></div></div></div>
-    <div class="svc-card reveal" data-cat="patrimonial" data-tags="planejamento sucessório doação testamento herança futuro"><div class="svc-img"><span class="ico main-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg></span><span class="svc-badge-tag">Planejamento</span><span class="ico svc-star-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><div class="svc-plus-btn"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span></div></div><div class="svc-body"><div class="svc-num-circle">C</div><h3 class="svc-name">Planejamento Sucessório</h3><p class="svc-desc">Doações, testamentos e holdings para proteger o legado, reduzir tributação e evitar inventários futuros.</p><div class="svc-cta">Ver detalhes <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg></span></div></div></div>
-    <div class="svc-card reveal" data-cat="registro" data-tags="sobrepartilha bem descoberto depois inventário regularização"><div class="svc-img"><span class="ico main-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v1m0 4v1m-2-3c0-.55.45-1 1-1h2.5a1 1 0 0 1 0 2H11a1 1 0 0 0 0 2H13a1 1 0 0 1 0 2H10"/></svg></span><span class="svc-badge-tag">Sobrepartilha</span><span class="ico svc-star-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><div class="svc-plus-btn"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span></div></div><div class="svc-body"><div class="svc-num-circle">D</div><h3 class="svc-name">Sobrepartilha</h3><p class="svc-desc">Descobriu um bem depois do inventário? A sobrepartilha regulariza a titularidade e permite venda ou transferência.</p><div class="svc-cta">Ver detalhes <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg></span></div></div></div>
-    <div class="svc-card reveal" data-cat="registro" data-tags="alvará imóvel registro cartório regularização transferência"><div class="svc-img"><span class="ico main-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg></span><span class="svc-badge-tag">Registro</span><span class="ico svc-star-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><div class="svc-plus-btn"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span></div></div><div class="svc-body"><div class="svc-num-circle">E</div><h3 class="svc-name">Alvarás e Regularização Imobiliária</h3><p class="svc-desc">Expedição de alvarás judiciais, transferência de imóveis herdados e blindagem da cadeia dominial.</p><div class="svc-cta">Ver detalhes <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg></span></div></div></div>
-    <div class="svc-card reveal" data-cat="patrimonial" data-tags="partilha bens divisão herdeiros equidade formal"><div class="svc-img"><span class="ico main-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span><span class="svc-badge-tag">Partilha</span><span class="ico svc-star-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><div class="svc-plus-btn"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span></div></div><div class="svc-body"><div class="svc-num-circle">F</div><h3 class="svc-name">Partilha de Bens</h3><p class="svc-desc">Divisão justa do acervo hereditário. Cada herdeiro recebe o que lhe é de direito com documentação completa.</p><div class="svc-cta">Ver detalhes <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg></span></div></div></div>
+    <div class="svc-card reveal" data-cat="patrimonial" data-tags="holding familiar patrimônio blindagem empresa proteção"><div class="svc-img-svg" style="height:180px;background:#1a1812;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;position:relative;overflow:hidden;">
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:56px;height:56px;opacity:.7"><rect x="8" y="28" width="48" height="28" rx="2" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M32 8 L8 28 L56 28 Z" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="24" y="40" width="16" height="16" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 28 L20 56M44 28 L44 56" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <span style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(201,169,97,.5);font-family:'Outfit',sans-serif">Patrimonial</span>
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(201,169,97,.04),transparent 70%)"></div>
+</div></div><div class="svc-body"><div class="svc-num-circle">A</div><h3 class="svc-name">Holding Familiar</h3><p class="svc-desc">Estruture o patrimônio, proteja bens de riscos pessoais, facilite a sucessão e reduza a carga tributária.</p><div class="svc-cta">Ver detalhes <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg></span></div></div></div>
+    <div class="svc-card reveal" data-cat="tributario" data-tags="ITCMD imposto tributária revisão avaliação imóvel reduzir"><div class="svc-img-svg" style="height:180px;background:#1a1812;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;position:relative;overflow:hidden;">
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:56px;height:56px;opacity:.7"><circle cx="32" cy="32" r="20" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M32 20v4M32 40v4M20 32h4M40 32h4" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 24l3 3M37 37l3 3M37 27l-3 3M24 40l3-3" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="32" r="6" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <span style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(201,169,97,.5);font-family:'Outfit',sans-serif">Tributário</span>
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(201,169,97,.04),transparent 70%)"></div>
+</div></div><div class="svc-body"><div class="svc-num-circle">B</div><h3 class="svc-name">Inteligência Tributária · ITCMD</h3><p class="svc-desc">Revisão crítica do cálculo do imposto de transmissão. Teses jurídicas para o menor ITCMD legalmente possível.</p><div class="svc-cta">Ver detalhes <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg></span></div></div></div>
+    <div class="svc-card reveal" data-cat="patrimonial" data-tags="planejamento sucessório doação testamento herança futuro"><div class="svc-img-svg" style="height:180px;background:#1a1812;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;position:relative;overflow:hidden;">
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:56px;height:56px;opacity:.7"><rect x="10" y="14" width="44" height="40" rx="2" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 24h44" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 14v-6M42 14v-6" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 34h10M18 42h20M18 38h14" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <span style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(201,169,97,.5);font-family:'Outfit',sans-serif">Planejamento</span>
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(201,169,97,.04),transparent 70%)"></div>
+</div></div><div class="svc-body"><div class="svc-num-circle">C</div><h3 class="svc-name">Planejamento Sucessório</h3><p class="svc-desc">Doações, testamentos e holdings para proteger o legado, reduzir tributação e evitar inventários futuros.</p><div class="svc-cta">Ver detalhes <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg></span></div></div></div>
+    <div class="svc-card reveal" data-cat="registro" data-tags="sobrepartilha bem descoberto depois inventário regularização"><div class="svc-img-svg" style="height:180px;background:#1a1812;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;position:relative;overflow:hidden;">
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:56px;height:56px;opacity:.7"><circle cx="20" cy="20" r="8" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="44" cy="20" r="8" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="44" r="8" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M26 24l6 12M38 24l-6 12" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M28 20h8" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <span style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(201,169,97,.5);font-family:'Outfit',sans-serif">Registro</span>
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(201,169,97,.04),transparent 70%)"></div>
+</div></div><div class="svc-body"><div class="svc-num-circle">D</div><h3 class="svc-name">Sobrepartilha</h3><p class="svc-desc">Descobriu um bem depois do inventário? A sobrepartilha regulariza a titularidade e permite venda ou transferência.</p><div class="svc-cta">Ver detalhes <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg></span></div></div></div>
+    <div class="svc-card reveal" data-cat="registro" data-tags="alvará imóvel registro cartório regularização transferência"><div class="svc-img-svg" style="height:180px;background:#1a1812;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;position:relative;overflow:hidden;">
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:56px;height:56px;opacity:.7"><path d="M32 8l4 12h12l-10 8 4 12-10-8-10 8 4-12-10-8h12z" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="14" y="44" width="36" height="4" rx="2" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="20" y="50" width="24" height="4" rx="2" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <span style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(201,169,97,.5);font-family:'Outfit',sans-serif">Registro</span>
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(201,169,97,.04),transparent 70%)"></div>
+</div></div><div class="svc-body"><div class="svc-num-circle">E</div><h3 class="svc-name">Alvarás e Regularização Imobiliária</h3><p class="svc-desc">Expedição de alvarás judiciais, transferência de imóveis herdados e blindagem da cadeia dominial.</p><div class="svc-cta">Ver detalhes <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg></span></div></div></div>
+    <div class="svc-card reveal" data-cat="patrimonial" data-tags="partilha bens divisão herdeiros equidade formal"><div class="svc-img-svg" style="height:180px;background:#1a1812;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;position:relative;overflow:hidden;">
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:56px;height:56px;opacity:.7"><path d="M32 10v44" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 32h40" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="10" r="4" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="32" r="4" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="52" cy="32" r="4" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="52" r="4" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="44" cy="52" r="4" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M32 54v-4" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 48l12-14M44 48l-12-14" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <span style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(201,169,97,.5);font-family:'Outfit',sans-serif">Patrimonial</span>
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(201,169,97,.04),transparent 70%)"></div>
+</div></div><div class="svc-body"><div class="svc-num-circle">F</div><h3 class="svc-name">Partilha de Bens</h3><p class="svc-desc">Divisão justa do acervo hereditário. Cada herdeiro recebe o que lhe é de direito com documentação completa.</p><div class="svc-cta">Ver detalhes <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg></span></div></div></div>
   </div>
 </section>
 
@@ -748,8 +774,8 @@ footer{background:var(--dark2);border-top:1px solid rgba(201,169,97,.1);padding:
 <div class="itcmd-banner reveal" id="itcmd">
   <div>
     <div class="itcmd-tag"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="9" cy="7" rx="7" ry="4"/><path d="M2 7v6c0 2.21 3.13 4 7 4s7-1.79 7-4V7"/><path d="M16 3.13A4 4 0 0 1 20 7v6c0 2.21-1.79 4-4 4"/></svg></span> &nbsp;Inteligência Tributária</div>
-    <h3 class="itcmd-title">Pague o menor ITCMD<br><em>legalmente possível</em></h3>
-    <p class="itcmd-desc">O imposto sobre transmissão de herança é calculado pelo Estado — mas o valor não é definitivo. Revisamos avaliações de imóveis, aplicamos teses jurídicas e garantimos que você não paga mais do que deve. Análise gratuita no primeiro contato.</p>
+    <h3 class="itcmd-title">Pague o menor ITCMD <em>legalmente possível</em></h3>
+    <p class="itcmd-desc">O imposto sobre transmissão de herança é calculado pelo Estado — mas o valor não é definitivo. Revisamos avaliações de imóveis, aplicamos teses jurídicas e garantimos que você não paga mais do que deve.</p>
   </div>
   <div class="itcmd-right">
     <div class="itcmd-big">ITCMD</div>
@@ -760,8 +786,8 @@ footer{background:var(--dark2);border-top:1px solid rgba(201,169,97,.1);padding:
 
 <!-- COMPARE -->
 <section id="compare" class="compare-section">
-  <div class="sec-tag reveal" style="color:var(--gold)">Comparativo</div>
-  <h2 class="sec-title reveal" style="color:var(--cream)">Extrajudicial vs Judicial:<br><em>qual é o seu caso?</em></h2>
+  <div class="sec-tag reveal" style="color:var(--gold)">COMPARATIVO</div>
+  <h2 class="sec-title reveal" style="color:var(--cream)">Extrajudicial vs Judicial: <em>Qual é o seu caso?</em></h2>
   <p class="sec-desc reveal" style="color:rgba(250,248,243,.5)">Entenda as diferenças e tome a decisão certa para a sua família.</p>
   <div class="table-wrap reveal">
     <table>
@@ -794,17 +820,17 @@ footer{background:var(--dark2);border-top:1px solid rgba(201,169,97,.1);padding:
       <div class="about-badge"><div class="about-badge-n">OAB/PR</div><div class="about-badge-l">131.531</div></div>
     </div>
     <div class="reveal-r">
-      <div class="sec-tag">O Advogado</div>
-      <h2 class="sec-title">Técnica a serviço<br><em>da sua família</em></h2>
+      <div class="sec-tag">O ADVOGADO</div>
+      <h2 class="sec-title">Técnica a serviço <em>da sua família</em></h2>
       <blockquote class="about-q">"Conheço cada caminho do Direito Sucessório — e escolho o mais eficiente para cada família, com transparência e compromisso total."</blockquote>
-      <p class="about-p">Especialista exclusivo em Direito das Sucessões, atuo em Campo Mourão e região. Minha abordagem é técnica e direta: identifico o caminho mais rápido e econômico, com segurança jurídica total.</p>
+      <p class="about-p">Especialista exclusivo em Direito das Sucessões, atuo  em todo território Brasileiro.<br>Minha abordagem é técnica e direta: identifico o caminho mais rápido e econômico, com segurança jurídica total.</p>
       <p class="about-p">Do inventário extrajudicial à holding familiar, do testamento à sobrepartilha — tenho o domínio técnico e a experiência prática para conduzir com eficiência e clareza.</p>
       <div class="gold-line"></div>
       <div class="creds">
         <div class="cred"><div class="cred-icon"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></span></div><div class="cred-t">OAB/PR 131.531 — Ordem dos Advogados do Brasil, Paraná</div></div>
-        <div class="cred"><div class="cred-icon"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M3 9l4-4M17 9l4-4M3 9h18M3 9l4 8H3M17 9l4 8h-4M5 21h14"/></svg></span></div><div class="cred-t">Atuação exclusiva em Direito das Sucessões — todas as vias e instrumentos</div></div>
-        <div class="cred"><div class="cred-icon"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 22V9M21 22V9M12 22V9M2 9h20M12 4 2 9h20L12 4z"/></svg></span></div><div class="cred-t">Assessor parlamentar — Câmara Municipal de Campo Mourão/PR</div></div>
-        <div class="cred"><div class="cred-icon"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span></div><div class="cred-t">Gestor de patrimônio em inventário judicial — portfólio imobiliário multimunicipal</div></div>
+        <div class="cred"><div class="cred-icon"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M3 9l4-4M17 9l4-4M3 9h18M3 9l4 8H3M17 9l4 8h-4M5 21h14"/></svg></span></div><div class="cred-t">Atuação exclusiva em Direito das Sucessões</div></div>
+        <div class="cred"><div class="cred-icon"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 22V9M21 22V9M12 22V9M2 9h20M12 4 2 9h20L12 4z"/></svg></span></div><div class="cred-t">Reguolarização de Imóvel, testamento e partilha dos bens</div></div>
+        <div class="cred"><div class="cred-icon"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span></div><div class="cred-t">Gestor de patrimônio em inventário judicial</div></div>
       </div>
     </div>
   </div>
@@ -813,9 +839,9 @@ footer{background:var(--dark2);border-top:1px solid rgba(201,169,97,.1);padding:
 <!-- PROCESS -->
 <section id="processo" class="process-section">
   <div style="text-align:center">
-    <div class="sec-tag reveal" style="justify-content:center">Como Funciona</div>
-    <h2 class="sec-title reveal" style="color:var(--cream);text-align:center">Do primeiro contato<br><em>à solução completa</em></h2>
-    <p class="sec-desc reveal" style="margin:0 auto;text-align:center;color:rgba(250,248,243,.42)">Processo claro e transparente — sem surpresas.</p>
+    <div class="sec-tag reveal" style="justify-content:center">COMO FUNCIONA</div>
+    <h2 class="sec-title reveal" style="color:var(--cream);text-align:center">Do primeiro contato <em>à solução completa</em></h2>
+    <p class="sec-desc reveal" style="margin:0 auto;text-align:center;color:rgba(250,248,243,.42)">Processo claro e transparente, sem surpresas.</p>
   </div>
   <div class="process-grid">
     <div class="proc-step reveal"><div class="proc-n"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span></div><h3 class="proc-title">Consulta Inicial</h3><p class="proc-text">Analisamos o patrimônio, a situação familiar e identificamos o melhor caminho jurídico.</p></div>
@@ -827,7 +853,7 @@ footer{background:var(--dark2);border-top:1px solid rgba(201,169,97,.1);padding:
 
 <!-- CTA STRIP 2 -->
 <div class="cta-strip reveal">
-  <div class="cta-strip-t"><em>Atendimento Online</em> disponível<br>para todo o Paraná e Brasil</div>
+  <div class="cta-strip-t"><em>ATENDIMENTO ONLINE</em> disponível para todo o Paraná e Brasil</div>
   <div class="cta-strip-btns">
     <a href="https://wa.me/5544920025968" class="btn-dark"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></span> Iniciar atendimento</a>
     <button class="btn-clear"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="15" height="10" rx="2"/><path d="m17 9 5-2v10l-5-2V9z"/></svg></span> Videoconferência</button>
@@ -837,31 +863,55 @@ footer{background:var(--dark2);border-top:1px solid rgba(201,169,97,.1);padding:
 <!-- BLOG -->
 <section id="blog" class="blog-section">
   <div class="blog-header">
-    <div><div class="sec-tag reveal">Conteúdo Jurídico</div><h2 class="sec-title reveal">Artigos e<br><em>Orientações</em></h2></div>
+    <div><div class="sec-tag reveal">CONTEÚDO JURÍDICO</div><h2 class="sec-title reveal">Artigos e <em>Orientações</em></h2></div>
     <div class="cnav-wrap reveal"><button class="cnav" onclick="bPrev()"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m15 18-6-6 6-6"/></svg></span></button><button class="cnav" onclick="bNext()"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg></span></button></div>
   </div>
   <div class="car-outer"><div class="car-track" id="bTrack">
-    <div class="art-card"><div class="art-img"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg></span><span class="art-cat">Inventário</span><span class="art-tag-badge">Conteúdo estratégico</span></div><div class="art-body"><div class="art-date"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span> 15 Jan 2025</div><h3 class="art-title">Inventário extrajudicial: quando é possível e como funciona</h3><p class="art-ex">Entenda os requisitos para o inventário em cartório e economize tempo e dinheiro no processo de partilha.</p><div class="art-link">Leia o artigo <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg></span></div></div></div>
-    <div class="art-card"><div class="art-img"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="2" width="16" height="20"/><path d="M9 22V12h6v10"/><path d="M8 7h.01M16 7h.01M8 11h.01M16 11h.01"/></svg></span><span class="art-cat">Holding</span><span class="art-tag-badge">Conteúdo estratégico</span></div><div class="art-body"><div class="art-date"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span> 02 Fev 2025</div><h3 class="art-title">Holding familiar: como proteger e transmitir patrimônio</h3><p class="art-ex">Como uma holding pode blindar seus bens, reduzir tributos e simplificar a sucessão empresarial.</p><div class="art-link">Leia o artigo <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg></span></div></div></div>
-    <div class="art-card"><div class="art-img"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="9" cy="7" rx="7" ry="4"/><path d="M2 7v6c0 2.21 3.13 4 7 4s7-1.79 7-4V7"/><path d="M16 3.13A4 4 0 0 1 20 7v6c0 2.21-1.79 4-4 4"/></svg></span><span class="art-cat">ITCMD</span><span class="art-tag-badge">Conteúdo estratégico</span></div><div class="art-body"><div class="art-date"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span> 10 Mar 2025</div><h3 class="art-title">Como reduzir o ITCMD legalmente no inventário</h3><p class="art-ex">O imposto de herança pode ser minimizado com inteligência tributária. Saiba quais teses aplicamos.</p><div class="art-link">Leia o artigo <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg></span></div></div></div>
-        <div class="art-card"><div class="art-img"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 21h12a2 2 0 0 0 0-4H8a2 2 0 0 1 0-4h12"/><path d="M8 21a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2"/><path d="M16 7H8"/><path d="M16 11H8"/></svg></span><span class="art-cat">Testamento</span><span class="art-tag-badge">Conteúdo estratégico</span></div><div class="art-body"><div class="art-date"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span> 22 Mar 2025</div><h3 class="art-title">Testamento: tipos, validade e quando fazer</h3><p class="art-ex">O testamento garante que sua vontade seja respeitada. Entenda os tipos e como cada um funciona.</p><div class="art-link">Leia o artigo <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg></span></div></div></div>
-    <div class="art-card"><div class="art-img"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="8" width="18" height="4"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg></span><span class="art-cat">Doação</span><span class="art-tag-badge">Conteúdo estratégico</span></div><div class="art-body"><div class="art-date"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span> 05 Abr 2025</div><h3 class="art-title">Doação em vida: vantagens e como fazer com segurança</h3><p class="art-ex">Transferir bens em vida pode ser mais vantajoso que deixar para inventário. Veja como fazer.</p><div class="art-link">Leia o artigo <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg></span></div></div></div>
-    <div class="art-card"><div class="art-img"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v1m0 4v1m-2-3c0-.55.45-1 1-1h2.5a1 1 0 0 1 0 2H11a1 1 0 0 0 0 2H13a1 1 0 0 1 0 2H10"/></svg></span><span class="art-cat">Sobrepartilha</span><span class="art-tag-badge">Conteúdo estratégico</span></div><div class="art-body"><div class="art-date"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span> 18 Mai 2025</div><h3 class="art-title">Descobri um bem depois do inventário — e agora?</h3><p class="art-ex">A sobrepartilha resolve exatamente isso. Saiba como regularizar bens não incluídos na partilha original.</p><div class="art-link">Leia o artigo <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg></span></div></div></div>
+    <div class="art-card"><div class="art-img-svg" style="height:200px;background:#1a1812;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;position:relative;overflow:hidden;">
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:52px;height:52px;opacity:.65"><path d="M14 8h36a2 2 0 0 1 2 2v44a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2z" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 22h24M20 30h24M20 38h16" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M40 42l6 6" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="43" cy="45" r="5" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <span style="font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(201,169,97,.45);font-family:'Outfit',sans-serif">Inventário</span>
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(201,169,97,.05),transparent 70%)"></div>
+</div><div class="art-body"><div class="art-date"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span> 15 Jan 2025</div><h3 class="art-title">Inventário extrajudicial: quando é possível e como funciona</h3><p class="art-ex">Entenda os requisitos para o inventário em cartório e economize tempo e dinheiro no processo de partilha.</p><div class="art-link">Leia o artigo<span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg></span></div></div></div>
+    <div class="art-card"><div class="art-img-svg" style="height:200px;background:#1a1812;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;position:relative;overflow:hidden;">
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:52px;height:52px;opacity:.65"><rect x="8" y="28" width="48" height="28" rx="2" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M32 8 L8 28 L56 28 Z" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="26" y="38" width="12" height="18" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <span style="font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(201,169,97,.45);font-family:'Outfit',sans-serif">Holding</span>
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(201,169,97,.05),transparent 70%)"></div>
+</div><div class="art-body"><div class="art-date"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span> 02 Fev 2025</div><h3 class="art-title">Holding familiar: como proteger e transmitir patrimônio</h3><p class="art-ex">Como uma holding pode blindar seus bens, reduzir tributos e simplificar a sucessão empresarial.</p><div class="art-link">Leia o artigo<span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg></span></div></div></div>
+    <div class="art-card"><div class="art-img-svg" style="height:200px;background:#1a1812;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;position:relative;overflow:hidden;">
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:52px;height:52px;opacity:.65"><path d="M16 48l10-20 6 10 8-16 8 26" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="8" y="10" width="48" height="44" rx="2" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 22h48" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <span style="font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(201,169,97,.45);font-family:'Outfit',sans-serif">ITCMD</span>
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(201,169,97,.05),transparent 70%)"></div>
+</div><div class="art-body"><div class="art-date"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span> 10 Mar 2025</div><h3 class="art-title">Como reduzir o ITCMD legalmente no inventário</h3><p class="art-ex">O imposto de herança pode ser minimizado com inteligência tributária. Saiba quais teses aplicamos.</p><div class="art-link">Leia o artigo<span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg></span></div></div></div>
+        <div class="art-card"><div class="art-img-svg" style="height:200px;background:#1a1812;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;position:relative;overflow:hidden;">
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:52px;height:52px;opacity:.65"><path d="M20 8h16l12 12v36H20V8z" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M36 8v12h12" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M26 30h16M26 38h16M26 46h10" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M44 42l4 4-4 4" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <span style="font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(201,169,97,.45);font-family:'Outfit',sans-serif">Testamento</span>
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(201,169,97,.05),transparent 70%)"></div>
+</div><div class="art-body"><div class="art-date"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span> 22 Mar 2025</div><h3 class="art-title">Testamento: tipos, validade e quando fazer</h3><p class="art-ex">O testamento garante que sua vontade seja respeitada. Entenda os tipos e como cada um funciona.</p><div class="art-link">Leia o artigo<span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg></span></div></div></div>
+    <div class="art-card"><div class="art-img-svg" style="height:200px;background:#1a1812;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;position:relative;overflow:hidden;">
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:52px;height:52px;opacity:.65"><path d="M32 52S10 38 10 24a12 12 0 0 1 22-6 12 12 0 0 1 22 6c0 14-22 28-22 28z" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 28h16M32 20v16" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <span style="font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(201,169,97,.45);font-family:'Outfit',sans-serif">Doação</span>
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(201,169,97,.05),transparent 70%)"></div>
+</div><div class="art-body"><div class="art-date"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span> 05 Abr 2025</div><h3 class="art-title">Doação em vida: vantagens e como fazer com segurança</h3><p class="art-ex">Transferir bens em vida pode ser mais vantajoso que deixar para inventário. Veja como fazer.</p><div class="art-link">Leia o artigo<span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg></span></div></div></div>
+    <div class="art-card"><div class="art-img-svg" style="height:200px;background:#1a1812;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;position:relative;overflow:hidden;">
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:52px;height:52px;opacity:.65"><circle cx="32" cy="22" r="12" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 42c0-6.6 5.4-12 12-12s12 5.4 12 12" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 56c0-8 8-12 18-12M50 56c0-8-8-12-18-12" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="14" cy="44" r="6" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="50" cy="44" r="6" stroke="#C9A961" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <span style="font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(201,169,97,.45);font-family:'Outfit',sans-serif">Sobrepartilha</span>
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(201,169,97,.05),transparent 70%)"></div>
+</div><div class="art-body"><div class="art-date"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span> 18 Mai 2025</div><h3 class="art-title">Descobri um bem depois do inventário — e agora?</h3><p class="art-ex">A sobrepartilha resolve exatamente isso. Saiba como regularizar bens não incluídos na partilha original.</p><div class="art-link">Leia o artigo<span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg></span></div></div></div>
   </div></div>
   <div class="car-dots" id="bDots"></div>
 </section>
 
 <!-- TESTIMONIALS -->
-<section class="testi-section">
+<section class="testi-section" style="background:#fff;">
   <div class="testi-header">
-    <div><div class="sec-tag reveal">Depoimentos</div><h2 class="sec-title reveal">O que dizem<br><em>nossos clientes</em></h2></div>
+    <div><div class="sec-tag reveal">DEPOIMENTOS</div><h2 class="sec-title reveal">O que dizem<br><em>nossos clientes</em></h2></div>
     <div class="cnav-wrap reveal"><button class="cnav" onclick="tPrev()"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m15 18-6-6 6-6"/></svg></span></button><button class="cnav" onclick="tNext()"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg></span></button></div>
   </div>
   <div class="testi-car-outer"><div class="testi-track" id="tTrack">
-    <div class="tcard"><span class="tq">"</span><div class="trating"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span></div><p class="tt">O Dr. Alcides resolveu em cartório um inventário que minha família achava que levaria anos. Em poucos meses tudo estava regularizado. A clareza com que ele explicou cada passo nos deu muita segurança.</p><div class="ta"><div class="tav"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span></div><div><div class="tn">Família M. — Campo Mourão/PR</div><div class="tc">Inventário extrajudicial · Imóveis urbanos</div></div></div></div>
-    <div class="tcard"><span class="tq">"</span><div class="trating"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span></div><p class="tt">Estruturamos a holding da nossa empresa e hoje temos a tranquilidade de saber que o patrimônio está protegido e a sucessão já está organizada. Foi o melhor investimento que fizemos.</p><div class="ta"><div class="tav"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="2" width="16" height="20"/><path d="M9 22V12h6v10"/><path d="M8 7h.01M16 7h.01M8 11h.01M16 11h.01"/></svg></span></div><div><div class="tn">Empresário — Região de Campo Mourão</div><div class="tc">Holding familiar · Planejamento sucessório</div></div></div></div>
-    <div class="tcard"><span class="tq">"</span><div class="trating"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span></div><p class="tt">Precisava regularizar um imóvel da família sem escritura. O Dr. Alcides indicou o caminho certo e em poucos meses o registro estava no nosso nome. Recomendo sem hesitar.</p><div class="ta"><div class="tav"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span></div><div><div class="tn">Família R. — Paraná</div><div class="tc">Alvará judicial · Registro imobiliário</div></div></div></div>
-    <div class="tcard"><span class="tq">"</span><div class="trating"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span></div><p class="tt">Durante o inventário judicial com conflito entre herdeiros, o Dr. Alcides conduziu tudo com clareza e firmeza. Conseguimos um acordo antes do julgamento e economizamos muito tempo.</p><div class="ta"><div class="tav"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M3 9l4-4M17 9l4-4M3 9h18M3 9l4 8H3M17 9l4 8h-4M5 21h14"/><circle cx="12" cy="3" r="1.5" fill="currentColor"/></svg></span></div><div><div class="tn">Cliente — Campo Mourão/PR</div><div class="tc">Inventário judicial · Negociação de conflitos</div></div></div></div>
+    <div class="tcard"><div class="trating"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span></div><p class="tt">O Dr. Alcides resolveu em cartório um inventário que minha família achava que levaria anos. Em poucos meses tudo estava regularizado. A clareza com que ele explicou cada passo nos deu muita segurança.</p><div class="ta"><div class="tav-dot" style="width:36px;height:36px;border-radius:50%;background:rgba(201,169,97,.12);border:1px solid rgba(201,169,97,.25);flex-shrink:0;"></div><div><div class="tn">Família M. — Campo Mourão/PR</div><div class="tc">Inventário extrajudicial · Imóveis urbanos</div></div></div></div>
+    <div class="tcard"><div class="trating"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span></div><p class="tt">Estruturamos a holding da nossa empresa e hoje temos a tranquilidade de saber que o patrimônio está protegido e a sucessão já está organizada. Foi o melhor investimento que fizemos.</p><div class="ta"><div class="tav-dot" style="width:36px;height:36px;border-radius:50%;background:rgba(201,169,97,.12);border:1px solid rgba(201,169,97,.25);flex-shrink:0;"></div><div><div class="tn">Empresário — Região de Campo Mourão</div><div class="tc">Holding familiar · Planejamento sucessório</div></div></div></div>
+    <div class="tcard"><div class="trating"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span></div><p class="tt">Precisava regularizar um imóvel da família sem escritura. O Dr. Alcides indicou o caminho certo e em poucos meses o registro estava no nosso nome. Recomendo sem hesitar.</p><div class="ta"><div class="tav-dot" style="width:36px;height:36px;border-radius:50%;background:rgba(201,169,97,.12);border:1px solid rgba(201,169,97,.25);flex-shrink:0;"></div><div><div class="tn">Família R. — Paraná</div><div class="tc">Alvará judicial · Registro imobiliário</div></div></div></div>
+    <div class="tcard"><div class="trating"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span></div><p class="tt">Durante o inventário judicial com conflito entre herdeiros, o Dr. Alcides conduziu tudo com clareza e firmeza. Conseguimos um acordo antes do julgamento e economizamos muito tempo.</p><div class="ta"><div class="tav-dot" style="width:36px;height:36px;border-radius:50%;background:rgba(201,169,97,.12);border:1px solid rgba(201,169,97,.25);flex-shrink:0;"></div><div><div class="tn">Família Nunes — Campo Mourão/PR</div><div class="tc">Inventário judicial · Negociação de conflitos</div></div></div></div>
   </div></div>
 </section>
 
@@ -869,8 +919,8 @@ footer{background:var(--dark2);border-top:1px solid rgba(201,169,97,.1);padding:
 <section id="faq" class="faq-section">
   <div class="faq-layout">
     <div class="faq-aside reveal-l">
-      <div class="sec-tag">Dúvidas Frequentes</div>
-      <h2 class="sec-title">Perguntas<br><em>mais comuns</em></h2>
+      <div class="sec-tag">DÚVIDAS FREQUENTES</div>
+      <h2 class="sec-title">Perguntas <em>mais comuns</em></h2>
       <p style="font-size:14px;color:var(--body);line-height:1.8;margin-top:14px;">Não encontrou sua dúvida? Envie pelo WhatsApp — respondemos em minutos.</p>
       <div class="faq-aside-img"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 22V9M21 22V9M12 22V9M2 9h20M12 4 2 9h20L12 4z"/></svg></span></div>
     </div>
@@ -893,8 +943,8 @@ footer{background:var(--dark2);border-top:1px solid rgba(201,169,97,.1);padding:
 
 <!-- MAP -->
 <section id="localizacao" class="map-section">
-  <div class="sec-tag reveal">Localização</div>
-  <h2 class="sec-title reveal">Onde nos<br><em>encontrar</em></h2>
+  <div class="sec-tag reveal">LOCALIZAÇÃO</div>
+  <h2 class="sec-title reveal">Onde nos <em>encontrar</em></h2>
   <div class="map-grid">
     <div class="map-embed reveal-l">
       <iframe src="https://www.google.com/maps?q=Av.+Armelindo+Trombini,+3015,+Campo+Mour%C3%A3o,+PR&output=embed" allowfullscreen loading="lazy" title="Localização"></iframe>
@@ -904,14 +954,14 @@ footer{background:var(--dark2);border-top:1px solid rgba(201,169,97,.1);padding:
         <div class="map-ci"><div class="map-ci-ic"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4.5 8-11.8A8 8 0 0 0 4 10.2C4 17.5 12 22 12 22z"/><circle cx="12" cy="10" r="3"/></svg></span></div><div><div class="map-ci-l">Endereço</div><div class="map-ci-v">Av. Armelindo Trombini, 3015<br>Campo Mourão, PR</div></div></div>
         <div class="map-ci"><div class="map-ci-ic"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></span></div><div><div class="map-ci-l">WhatsApp</div><div class="map-ci-v">(44) 92002-5968</div></div></div>
         <div class="map-ci"><div class="map-ci-ic"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span></div><div><div class="map-ci-l">E-mail</div><div class="map-ci-v">pirrottiadv@outlook.com</div></div></div>
-        <div class="map-ci"><div class="map-ci-ic"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="15" height="10" rx="2"/><path d="m17 9 5-2v10l-5-2V9z"/></svg></span></div><div><div class="map-ci-l">Atendimento Online</div><div class="map-ci-v">Todo o Brasil · WhatsApp + Videoconferência</div></div></div>
+        <div class="map-ci"><div class="map-ci-ic"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="15" height="10" rx="2"/><path d="m17 9 5-2v10l-5-2V9z"/></svg></span></div><div><div class="map-ci-l">ATENDIMENTO ONLINE</div><div class="map-ci-v">Todo o Brasil · WhatsApp + Videoconferência</div></div></div>
       </div>
       <div class="hours-box">
         <div class="hours-title"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>Horários de Atendimento</div>
         <div class="hours-row"><span>Segunda a Sexta</span><span>Horário de escritório</span></div>
         <div class="hours-row wknd"><span>Sábado</span><span><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></span> WhatsApp · emergências</span></div>
         <div class="hours-row wknd"><span>Domingo</span><span><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></span> WhatsApp · emergências</span></div>
-        <div class="hours-row"><span>Atendimento Online</span><span>Todo o Brasil</span></div>
+        <div class="hours-row"><span>ATENDIMENTO ONLINE</span><span>Todo o Brasil</span></div>
       </div>
     </div>
   </div>
@@ -919,9 +969,9 @@ footer{background:var(--dark2);border-top:1px solid rgba(201,169,97,.1);padding:
 
 <!-- CTA FINAL -->
 <section id="contato" class="cta-section">
-  <div class="sec-tag reveal" style="justify-content:center">Atendimento Online</div>
-  <h2 class="cta-title reveal">Pronto para<br><em>resolver sua sucessão?</em></h2>
-  <p class="cta-sub reveal">Consulta inicial gratuita. Identificamos o melhor caminho e estimamos prazo e custo — sem compromisso.</p>
+  <div class="sec-tag reveal" style="justify-content:center">ATENDIMENTO ONLINE</div>
+  <h2 class="cta-title reveal">Pronto para <em>resolver sua sucessão?</em></h2>
+  <p class="cta-sub reveal">Consulta inicial gratuita. Identificamos o melhor caminho e estimamos prazo e custo, sem compromisso.</p>
   <div class="cta-btns reveal">
     <a href="https://wa.me/5544920025968" class="btn-wa"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></span> Falar pelo WhatsApp</a>
     <button class="btn-gold"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg></span> Agendar consulta</button>
@@ -932,11 +982,11 @@ footer{background:var(--dark2);border-top:1px solid rgba(201,169,97,.1);padding:
 <footer>
   <div>
     <div class="f-brand">Alcides Pirrotti</div>
-    <div class="f-oab">OAB/PR 131.531</div>
+    <div class="f-oab">OAB/PR 131.531 — Ordem dos Advogados do Brasil, Paraná</div>
     <p class="f-tl">Advocacia especializada em Direito das Sucessões. Campo Mourão e região, Paraná.</p>
   </div>
   <div>
-    <div class="f-h">Áreas de Atuação</div>
+    <div class="f-h">Areas de atuação</div>
     <ul class="f-links">
       <li><a href="#areas"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg></span>Inventário Extrajudicial</a></li>
       <li><a href="#areas"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 22V9M21 22V9M12 22V9M2 9h20M12 4 2 9h20L12 4z"/></svg></span>Inventário Judicial</a></li>
@@ -964,7 +1014,7 @@ footer{background:var(--dark2);border-top:1px solid rgba(201,169,97,.1);padding:
   </div>
 </footer>
 <div class="footer-btm">
-  <span class="f-copy">© 2025 Alcides Pirrotti · Advocacia em Sucessões · OAB/PR 131.531 · Todos os direitos reservados</span>
+  <span class="f-copy">© 2026 Alcides Pirrotti · Advocacia em Sucessões · OAB/PR 131.531 · Todos os direitos reservados</span>
   <div class="f-social">
     <a href="#" class="fsl" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></span></a>
     <a href="#" class="fsl" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></span></a>
@@ -983,6 +1033,22 @@ window.addEventListener('scroll',()=>{
   const h=document.documentElement;
   document.getElementById('sp').style.width=((h.scrollTop/(h.scrollHeight-h.clientHeight))*100)+'%';
   document.getElementById('scrollTop').classList.toggle('show',window.scrollY>400);
+  // Nav scroll behavior like zip: transparent → light on scroll
+  const nav=document.querySelector('nav');
+  const scrolled=window.scrollY>80;
+  if(nav){
+    nav.style.backgroundColor=scrolled?'rgba(250,248,243,0.97)':'rgba(17,16,9,0.85)';
+    nav.style.backdropFilter=scrolled?'blur(12px)':'none';
+    nav.style.borderBottom=scrolled?'1px solid rgba(201,169,97,0.1)':'1px solid rgba(201,169,97,0.08)';
+    // Nav text color changes
+    document.querySelectorAll('.nav-links a,.nav-links button').forEach(el=>{
+      el.style.color=scrolled?'rgba(26,26,26,0.7)':'rgba(255,255,255,0.75)';
+    });
+    const logo=document.querySelector('.nav-logo');
+    if(logo) logo.style.color=scrolled?'#1A1A1A':'#C9A961';
+    const hamSpans=document.querySelectorAll('.hamburger span');
+    hamSpans.forEach(s=>s.style.backgroundColor=scrolled?'#1A1A1A':'rgba(250,248,243,0.85)');
+  }
 },{passive:true});
 
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v');});},{threshold:.1,rootMargin:'0px 0px -36px 0px'});
@@ -1047,7 +1113,7 @@ let aIdx=0;const aCards=document.querySelectorAll('.area-card');const aTotal=aCa
 for(let i=0;i<aTotal;i++){const d=document.createElement('div');d.className='adot'+(i===0?' on':'');d.onclick=()=>goA(i);aDotsEl.appendChild(d);}
 function goA(i){aIdx=Math.max(0,Math.min(i,aTotal-1));const w=aCards[0].offsetWidth+20;document.getElementById('aTrack').style.transform=`translateX(-${aIdx*w}px)`;document.querySelectorAll('.adot').forEach((d,idx)=>d.classList.toggle('on',idx===aIdx));}
 function aNext(){goA((aIdx+1)%aTotal);}function aPrev(){goA((aIdx-1+aTotal)%aTotal);}
-setInterval(aNext,4500);
+// autoplay desativado — navegação manual
 
 let bIdx=0;const bCards=document.querySelectorAll('.art-card');const bTotal=Math.ceil(bCards.length/3);const bDotsEl=document.getElementById('bDots');
 for(let i=0;i<bTotal;i++){const d=document.createElement('div');d.className='cdot'+(i===0?' on':'');d.onclick=()=>goB(i);bDotsEl.appendChild(d);}
@@ -1069,168 +1135,19 @@ window.addEventListener('scroll',()=>{
 },{passive:true});
 
 
-// ── ADMIN EDIT MODE ──────────────────────────────────────────────────
-const ADMIN_PWD = 'pirrotti2025';
-const EDITABLE_SELECTORS = [
-  'h1.hero-h','p.hero-sl','p.hero-desc',
-  '.sec-title','.sec-desc','.sec-tag',
-  '.diff-name','.diff-desc',
-  '.area-name','.area-short','.area-badge',
-  '.svc-name','.svc-desc',
-  '.about-q','.about-p','.cred-t',
-  '.proc-title','.proc-text',
-  '.art-title','.art-ex','.art-date',
-  '.tt','.tn','.tc',
-  '.faq-q span','.faq-a p',
-  '.map-ci-v','.hours-row span',
-  '.cta-title','.cta-sub',
-  '.f-brand','.f-tl','.fci span',
-  '.itcmd-title','.itcmd-desc',
-  '.cta-strip-t',
-  '.hero-ey'
-];
 
-let editMode = false;
-let originalHTML = {};
-
-function openAdminLogin(){
-  document.getElementById('adminLogin').classList.add('open');
-  setTimeout(()=>document.getElementById('adminPwd').focus(),100);
-}
-
-function adminAuth(){
-  const pwd = document.getElementById('adminPwd').value;
-  if(pwd === ADMIN_PWD){
-    document.getElementById('adminLogin').classList.remove('open');
-    document.getElementById('adminPwd').value='';
-    enableEditMode();
-  } else {
-    const err = document.getElementById('adminErr');
-    err.style.display='block';
-    document.getElementById('adminPwd').value='';
-    setTimeout(()=>err.style.display='none',2500);
-  }
-}
-
-function enableEditMode(){
-  editMode = true;
-  document.body.classList.add('edit-mode');
-  document.getElementById('adminBar').classList.add('on');
-  document.querySelector('.admin-trigger').style.display='none';
-  
-  EDITABLE_SELECTORS.forEach(sel=>{
-    document.querySelectorAll(sel).forEach(el=>{
-      if(!el.hasAttribute('contenteditable')){
-        originalHTML[el.dataset.eid = Math.random().toString(36).slice(2)] = el.innerHTML;
-        el.contentEditable = 'true';
-        el.spellcheck = false;
-      }
-    });
-  });
-}
-
-function adminCancel(){
-  // Restore originals
-  EDITABLE_SELECTORS.forEach(sel=>{
-    document.querySelectorAll(sel).forEach(el=>{
-      if(el.dataset.eid && originalHTML[el.dataset.eid] !== undefined){
-        el.innerHTML = originalHTML[el.dataset.eid];
-      }
-      el.removeAttribute('contenteditable');
-      delete el.dataset.eid;
-    });
-  });
-  editMode = false;
-  document.body.classList.remove('edit-mode');
-  document.getElementById('adminBar').classList.remove('on');
-  document.querySelector('.admin-trigger').style.display='';
-  originalHTML = {};
-}
-
-function adminSave(){
-  // Collect all edits
-  const edits = {};
-  EDITABLE_SELECTORS.forEach(sel=>{
-    document.querySelectorAll(sel).forEach((el,i)=>{
-      edits[sel+'['+i+']'] = el.innerHTML;
-      el.removeAttribute('contenteditable');
-      delete el.dataset.eid;
-    });
-  });
-  
-  // Save to localStorage
-  localStorage.setItem('pirrotti_edits', JSON.stringify(edits));
-  localStorage.setItem('pirrotti_edits_date', new Date().toLocaleString('pt-BR'));
-  
-  editMode = false;
-  document.body.classList.remove('edit-mode');
-  document.getElementById('adminBar').classList.remove('on');
-  document.querySelector('.admin-trigger').style.display='';
-  originalHTML = {};
-  
-  // Show success
-  const bar = document.getElementById('adminBar');
-  bar.style.background='rgba(76,175,80,.15)';
-  bar.classList.add('on');
-  bar.querySelector('.admin-bar-label').textContent='Alterações salvas com sucesso!';
-  bar.querySelector('.admin-bar-hint').textContent='As edições estão armazenadas neste navegador';
-  setTimeout(()=>{
-    bar.classList.remove('on');
-    bar.style.background='';
-    bar.querySelector('.admin-bar-label').textContent='Modo Edição Ativo';
-    bar.querySelector('.admin-bar-hint').textContent='Clique em qualquer texto para editar';
-  },3000);
-}
-
-// Load saved edits on page load
-function loadSavedEdits(){
-  const saved = localStorage.getItem('pirrotti_edits');
-  if(!saved) return;
-  try {
-    const edits = JSON.parse(saved);
-    EDITABLE_SELECTORS.forEach(sel=>{
-      document.querySelectorAll(sel).forEach((el,i)=>{
-        const key = sel+'['+i+']';
-        if(edits[key] !== undefined) el.innerHTML = edits[key];
-      });
-    });
-  } catch(e){}
-}
-
-window.addEventListener('DOMContentLoaded', loadSavedEdits);
-document.addEventListener('keydown',e=>{
-  if(e.key==='Escape'&&editMode) adminCancel();
-  if(e.key==='Enter'&&document.getElementById('adminLogin').classList.contains('open')) adminAuth();
-});
 
 </script>
 
-<!-- ADMIN LOGIN -->
-<div class="admin-login" id="adminLogin">
-  <div class="admin-login-box">
-    <div class="admin-login-title">Painel Administrativo</div>
-    <div class="admin-login-sub">Digite a senha para editar o site</div>
-    <input type="password" id="adminPwd" placeholder="••••••••" onkeydown="if(event.key==='Enter')adminAuth()">
-    <button class="admin-login-btn" onclick="adminAuth()">Entrar no modo edição</button>
-    <div class="admin-login-err" id="adminErr">Senha incorreta</div>
-  </div>
-</div>
+    
 
-<!-- ADMIN BAR -->
-<div class="admin-bar" id="adminBar">
-  <div class="admin-bar-left">
-    <div class="admin-bar-dot"></div>
-    <span class="admin-bar-label">Modo Edição Ativo</span>
-    <span class="admin-bar-hint">Clique em qualquer texto para editar</span>
+    
   </div>
   <div class="admin-btns">
     <button class="admin-cancel" onclick="adminCancel()">Cancelar</button>
     <button class="admin-save" onclick="adminSave()">💾 Salvar alterações</button>
   </div>
 </div>
-
-<!-- ADMIN TRIGGER (hidden at bottom center) -->
-<button class="admin-trigger" onclick="openAdminLogin()" title="Painel administrativo">⚙</button>
 
 </body>
 </html>
